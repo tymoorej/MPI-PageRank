@@ -137,8 +137,10 @@ int main(int argc, char * argv[]){
     } while (delta >= EPSILON);
 
     GET_TIME(end);
-    Lab4_saveoutput(ranks, total_nodes, end-start);
-    printf("Total time taken %f\n", end-start);
+    if (my_rank == 0){
+        Lab4_saveoutput(ranks, total_nodes, end-start);
+        printf("Total time taken %f\n", end-start);
+    }
     finish();
     return 0;
 }
