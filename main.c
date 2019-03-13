@@ -54,6 +54,7 @@ void init(int argc, char * argv[]){
 
     total_nodes = get_end(); 
     nodes_per_process = total_nodes / number_of_processes;
+    delta = 0;
     
     if (my_rank != number_of_processes -1){
         my_start = nodes_per_process * my_rank;
